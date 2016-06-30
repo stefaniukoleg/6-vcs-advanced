@@ -1,0 +1,113 @@
+1. git branch --list
+   git branch architecture
+   git checkout architecture
+   mkdir assets uploads
+   echo 123 >> uploads/123.txt
+   echo 321 >> assets/321.txt
+   echo >> uploads/.keep
+   git add .
+   git status -s
+   git commit -m "added folders including txt files and added html file"
+   echo >> assets/all.js
+   echo >> assets/css.js
+   git add .
+   git commit -m "adding js files in assets folder"
+   git push origin architecture
+   echo >> .gitignore 
+   echo uploads/* >> .gitignore
+   echo !.gitignore >> .gitignore
+   echo !.keep >> .gitignore
+   git rm --cached -r E:\FrontEND.WebUI\#2GIT\VCS-Advanced\uploads
+   git add .
+   git commit -m "creater .gitignore"
+   git checkout master
+   git merge architecture
+   git branch --delete architecture
+   git push origin :architecture
+   git push origin master    
+  
+2. git branch newbranch
+   echo 123 >> 123.txt
+   git add .
+   git commit -m "create new file"
+   echo 321 >> 321.txt
+   git add .
+   git commit -m "create new second file"
+   git checkout newbranch
+   git rebase master
+   echo newcomm >> newcomm.txt
+   git add .
+   git commit -m "create file in newbranch"
+   git checkout master
+   git merge newbranch
+   git branch --delete newbranch
+   git push origin master
+
+3. echo comm1 >> comm1.txt
+   git add .
+   git commit -m "create comm1 file"
+   echo comm2 >> comm2.txt
+   git add .
+   git commit -m "create comm2 file"
+   git tag firsttag
+   git push origin firsttag
+   
+   
+4. git submodule add https://github.com/yuraromaniv/branch
+   git add .
+   git commit -m "make copy of repo"
+   git push origin master
+
+5. git branch gh-pages
+   git checkout gh-pages
+   echo 123456789 >> index.html
+   git add .
+   git commit -m "add html file"
+   git push origin gh-pages
+   
+   перейти по лінку -> https://stefaniukoleg.github.io/VCS-Advanced/
+   зміни синхронізовані
+
+   echo 11,12,13,14,15 >> index.html
+   git add .
+   git commit -m "make some changes"
+   git push origin gh-pages
+
+   перейти по лінку -> https://stefaniukoleg.github.io/VCS-Advanced/
+   зміни синхронізовані
+
+6. echo my name is oleg >> file.txt
+   git add .
+   git commit -m "change file.txt"
+   git push origin master
+   git branch branch
+   git checkout branch
+   echo my name is oleg stefaniuk and i was born in Radekhiv city >> file.txt
+   git add .
+   git commit -m "change file.txt"
+   git push origin branch
+   git merge master
+
+   Отриманий конфлікт:
+   Auto-merging file.txt
+   CONFLICT (add/add): Merge conflict in file.txt
+   Automatic merge failed; fix conflicts and then commit the result.
+
+   git merge --abort
+   
+   Вирішення конфлікту:
+     Відкрити файл file.txt:
+	<<<<<<< HEAD
+	=======
+	my name is oleg 
+	>>>>>>> master
+	my name is oleg stefaniuk and i was born in Radekhiv city 
+     Внести зміни:
+	my name is oleg 
+	my name is oleg stefaniuk and i was born in Radekhiv city 
+   
+     git add .
+     git commit -m "fixed conflict"
+     git merge master
+
+     Конфлікт вирішено, merge успішний.
