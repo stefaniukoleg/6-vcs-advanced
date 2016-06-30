@@ -65,16 +65,16 @@
    git commit -m "add html file"
    git push origin gh-pages
    
-   перейти по лінку -> https://stefaniukoleg.github.io/VCS-Advanced/
-   зміни синхронізовані
+   РїРµСЂРµР№С‚Рё РїРѕ Р»С–РЅРєСѓ -> https://stefaniukoleg.github.io/VCS-Advanced/
+   Р·РјС–РЅРё СЃРёРЅС…СЂРѕРЅС–Р·РѕРІР°РЅС–
 
    echo 11,12,13,14,15 >> index.html
    git add .
    git commit -m "make some changes"
    git push origin gh-pages
 
-   перейти по лінку -> https://stefaniukoleg.github.io/VCS-Advanced/
-   зміни синхронізовані
+   РїРµСЂРµР№С‚Рё РїРѕ Р»С–РЅРєСѓ -> https://stefaniukoleg.github.io/VCS-Advanced/
+   Р·РјС–РЅРё СЃРёРЅС…СЂРѕРЅС–Р·РѕРІР°РЅС–
 
 6. echo my name is oleg >> file.txt
    git add .
@@ -88,21 +88,21 @@
    git push origin branch
    git merge master
 
-   Отриманий конфлікт:
+   РћС‚СЂРёРјР°РЅРёР№ РєРѕРЅС„Р»С–РєС‚:
    Auto-merging file.txt
    CONFLICT (add/add): Merge conflict in file.txt
    Automatic merge failed; fix conflicts and then commit the result.
 
    git merge --abort
    
-   Вирішення конфлікту:
-     Відкрити файл file.txt:
+   Р’РёСЂС–С€РµРЅРЅСЏ РєРѕРЅС„Р»С–РєС‚Сѓ:
+     Р’С–РґРєСЂРёС‚Рё С„Р°Р№Р» file.txt:
 	<<<<<<< HEAD
 	=======
 	my name is oleg 
 	>>>>>>> master
 	my name is oleg stefaniuk and i was born in Radekhiv city 
-     Внести зміни:
+     Р’РЅРµСЃС‚Рё Р·РјС–РЅРё:
 	my name is oleg 
 	my name is oleg stefaniuk and i was born in Radekhiv city 
    
@@ -110,4 +110,4 @@
      git commit -m "fixed conflict"
      git merge master
 
-     Конфлікт вирішено, merge успішний.
+     РљРѕРЅС„Р»С–РєС‚ РІРёСЂС–С€РµРЅРѕ, merge СѓСЃРїС–С€РЅРёР№.
